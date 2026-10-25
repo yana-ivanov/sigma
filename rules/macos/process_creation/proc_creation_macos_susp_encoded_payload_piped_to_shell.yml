@@ -9,6 +9,7 @@ references:
     - https://www.microsoft.com/en-us/security/blog/2026/08/18/hunting-macsync-stealer-infrastructure-through-behavioral-pivots/
     - https://securelist.com/macsync-new-version/121383/
     - https://hunt.io/blog/macos-clickfix-applescript-terminal-phishing
+    - https://unit42.paloaltonetworks.com/atomic-macos-amos-stealer-activity
 author: Yana Ivanov
 date: 2026-10-10
 tags:
@@ -39,6 +40,12 @@ detection:
             - '|bash'
             - '| zsh'
             - '|zsh'
+            - '| /bin/sh'
+            - '| /bin/bash'
+            - '| /bin/zsh'
+            - '|/bin/sh'
+            - '|/bin/bash'
+            - '|/bin/zsh'
     condition: all of selection_*
 falsepositives:
     - Installation scripts that fetch a compressed archive and pipe it through a shell, which is uncommon but not unheard of in developer tooling
