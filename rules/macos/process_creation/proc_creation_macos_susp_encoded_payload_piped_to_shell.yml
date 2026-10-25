@@ -13,6 +13,7 @@ author: Yana Ivanov
 date: 2026-10-10
 tags:
     - attack.execution
+    - attack.stealth
     - attack.command-and-control
     - attack.t1059.004
     - attack.t1105
@@ -26,7 +27,6 @@ detection:
     selection_decode:
         CommandLine|contains:
             - 'base64 -d'
-            - 'base64 -D'
             - 'base64 --decode'
             - 'gunzip'
             - 'gzip -d'
